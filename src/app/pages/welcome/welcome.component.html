@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-container">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="title-center"><h2>เข้าสู่ระบบ</h2></div>
+          
+          <div class="form-group">
+            <label for="username">ชื่อผู้ใช้:</label>
+            <input 
+              type="text" 
+              id="username"
+              formControlName="username"
+              class="form-control">
+            <div *ngIf="submitted && loginForm.get('username')?.invalid" class="error-message">
+              กรุณากรอกชื่อผู้ใช้
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="password">รหัสผ่าน:</label>
+            <input 
+              type="password" 
+              id="password"
+              formControlName="password"
+              class="form-control">
+            <div *ngIf="submitted && loginForm.get('password')?.invalid" class="error-message">
+              กรุณากรอกรหัสผ่าน
+            </div>
+          </div>
+  
+          <button type="submit">เข้าสู่ระบบ</button>
+          <button  type="button" (click)="signup_redirect()" >สมัครสมาชิก</button>
+        </form>
+      </div>
+</body>
+</html>
