@@ -1,1 +1,23 @@
-<p>table-search-all works!</p>
+<div class="card">
+    <p-table 
+        [value]="Users" 
+        styleClass="p-datatable-striped" 
+        [tableStyle]="{'min-width': '50rem'}">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td>{{User.code}}</td>
+                    <td>{{User.name}}</td>
+                    <td>{{User.category}}</td>
+                    <td>{{User.quantity}}</td>
+                </tr>
+            </ng-template>
+    </p-table>
+</div>

@@ -1,12 +1,24 @@
 import { Component } from '@angular/core';
+import { TableModule } from 'primeng/table';
+import { CommonModule } from '@angular/common';
+import { User } from './user/user';
+import { Users } from './users/users';
 
 @Component({
-  selector: 'app-table-search-all',
-  standalone: true,
-  imports: [],
-  templateUrl: './table-search-all.component.html',
-  styleUrl: './table-search-all.component.css'
+    selector: 'table-search-all',
+    templateUrl: './table-search-all.component.html',  
+    standalone: true,
+    imports: [TableModule, CommonModule],
+    providers: [Users]
 })
-export class TableSearchAllComponent {
+export class TableAll {
+    Users!: User[];
 
+    constructor(private users: Users) {}
+
+    ngOnInit() {
+        this.users.getUsers().then((data) => {
+            this.Users = data;
+        });
+    }
 }
