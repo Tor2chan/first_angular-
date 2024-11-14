@@ -7,8 +7,8 @@ import { TableAll } from './table-search-all/table-search-all.component';
 @Component({
   selector: 'app-serach-radio',
   standalone: true,
-  imports: [FormsModule, RadioButtonModule, SearchRadioComponent],
-  template: '<app-search-radio></app-search-radio> <div><table-search-all></table-search-all></div>',
+  imports: [FormsModule, RadioButtonModule,TableAll,SearchRadioComponent],
+  template: '<div><app-search-radio/><search-all/></div>',
   styleUrl: './home.component.css'
 })
 

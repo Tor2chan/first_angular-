@@ -5,7 +5,7 @@ import { User } from './user/user';
 import { Users } from './users/users';
 
 @Component({
-    selector: 'table-search-all',
+    selector: 'search-all',
     templateUrl: './table-search-all.component.html',  
     standalone: true,
     imports: [TableModule, CommonModule],
