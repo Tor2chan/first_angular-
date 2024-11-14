@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
+import { Router } from '@angular/router';  
 
 
 @Component({
@@ -12,54 +13,30 @@ import { MenubarModule } from 'primeng/menubar';
 })
 export class SidebarComponent implements OnInit{
   items: MenuItem[] | undefined;
+  constructor(private router: Router){
+    
+  }
 
   ngOnInit() {
       this.items = [
           {
               label: 'Home',
-              icon: 'pi pi-home'
+              icon: 'pi pi-home',
+              command: () => {this.router.navigate(['home'])}
           },
           {
               label: 'Features',
               icon: 'pi pi-star'
-          },
-          {
-              label: 'Projects',
-              icon: 'pi pi-search',
-              items: [
-                  {
-                      label: 'Components',
-                      icon: 'pi pi-bolt'
-                  },
-                  {
-                      label: 'Blocks',
-                      icon: 'pi pi-server'
-                  },
-                  {
-                      label: 'UI Kit',
-                      icon: 'pi pi-pencil'
-                  },
-                  {
-                      label: 'Templates',
-                      icon: 'pi pi-palette',
-                      items: [
-                          {
-                              label: 'Apollo',
-                              icon: 'pi pi-palette'
-                          },
-                          {
-                              label: 'Ultima',
-                              icon: 'pi pi-palette'
-                          }
-                      ]
-                  }
-              ]
-          },
-          {
-              label: 'Contact',
-              icon: 'pi pi-envelope'
           }
       ]
+  }
+
+  signup_redirect() {
+    this.router.navigate(['signup']);  
+  }
+
+  signin_redirect() {
+    this.router.navigate(['signin']);  
   }
 
 }  

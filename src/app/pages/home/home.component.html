@@ -1,1 +1,36 @@
-<p>home</p>
+<div class="card flex justify-content-center mt-14">
+    <div class="flex flex-wrap gap-8">
+        <div class="flex align-items-center">
+            <p-radioButton 
+                name="pizza" 
+                value="Cheese" 
+                [(ngModel)]="search_by" 
+                inputId="search_by1" />
+            <label for="search_by1" class="ml-2">
+                Search All
+            </label>
+        </div>
+        
+        <div class="flex align-items-center">
+            <p-radioButton 
+                name="pizza" 
+                value="Mushroom" 
+                [(ngModel)]="search_by" 
+                inputId="search_by2" />
+            <label for="search_by2" class="ml-2">
+                Seach by email
+            </label>
+        </div>
+        
+        <div class="flex align-items-center">
+            <p-radioButton 
+                name="pizza" 
+                value="Pepper" 
+                [(ngModel)]="search_by" 
+                inputId="search_by3" />
+            <label for="search_by3" class="ml-2">
+                Search by username
+            </label>
+        </div>
+    </div>
+</div>
