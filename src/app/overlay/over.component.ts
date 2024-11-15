@@ -9,7 +9,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   imports: [RouterModule, SidebarComponent],  
   template: `<app-sidebar></app-sidebar>     
             <div>
-                <router-outlet></router-outlet> 
+                <router-outlet ></router-outlet> 
             </div>`
 })
 export class OverlayComponent {

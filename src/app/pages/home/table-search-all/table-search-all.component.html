@@ -1,23 +1,25 @@
 <div class="card">
-    <p-table 
-        [value]="Users" 
-        styleClass="p-datatable-striped" 
-        [tableStyle]="{'min-width': '50rem'}">
-            <ng-template pTemplate="header">
-                <tr>
-                    <th>email</th>
-                    <th>username</th>
-                    <th>name</th>
-                    <th>role</th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-user>
-                <tr>
-                    <td>{{user.email}}</td>
-                    <td>{{user.username}}</td>
-                    <td>{{user.name}}</td>
-                    <td>{{user.role}}</td>
-                </tr>
-            </ng-template>
-    </p-table>
+    <div style="max-width: 80%; margin: 0 auto;">
+        <p-table 
+            [value]="Users" 
+            styleClass="p-datatable-striped" 
+            [tableStyle]="{'min-width': '50rem'}">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>email</th>
+                        <th>username</th>
+                        <th>name</th>
+                        <th>role</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-user>
+                    <tr>
+                        <td>{{user.email}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.role}}</td>
+                    </tr>
+                </ng-template>
+        </p-table>
+    </div>
 </div>

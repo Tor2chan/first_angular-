@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { User } from './user/user';
@@ -9,7 +9,7 @@ import { Users } from './users/users';
     templateUrl: './table-search-all.component.html',  
     standalone: true,
     imports: [TableModule, CommonModule],
-    providers: [Users]
+    providers: [Users],
 })
 export class TableAll {
     Users!: User[];
