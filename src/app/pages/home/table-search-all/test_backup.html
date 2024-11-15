@@ -1,19 +1,16 @@
 <div class="card">
     <div style="max-width: 80%; margin: 0 auto;">
-        <p-table
-        [value]="Users"
-        [paginator]="true"
-        [rows]="5"
-        [tableStyle]="{ 'min-width': '50rem' }"
-        [rowsPerPageOptions]="[5, 10, 20]"
-    >
+        <p-table 
+            [value]="Users" 
+            styleClass="p-datatable-striped" 
+            [tableStyle]="{'min-width': '50rem'}">
                 <ng-template pTemplate="header">
-                    <tr >
-                        <th style="width:25%">email</th>
-                        <th style="width:25%">username</th>
-                        <th style="width:25%">name</th>
-                        <th style="width:25%">role</th>
-                        <th style="width:25%">edit role</th>
+                    <tr>
+                        <th>email</th>
+                        <th>username</th>
+                        <th>name</th>
+                        <th>role</th>
+                        <th>edit role</th>
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-user>

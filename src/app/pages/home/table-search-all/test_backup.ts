@@ -6,7 +6,6 @@ import { Users } from './users/users';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';  
 
-
 interface Role {
     role: string;
 }
@@ -18,7 +17,7 @@ interface Role {
     imports: [TableModule, CommonModule, DropdownModule, FormsModule],
     providers: [Users],
 })
-export class TableAll  {
+export class TableAll implements OnInit {
     Users!: User[];
     availableRoles: Role[] = [
         { role: 'admin' },

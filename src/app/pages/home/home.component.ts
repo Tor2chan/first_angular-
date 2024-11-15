@@ -31,7 +31,6 @@ import { TableUsername } from './table-search-username/table-search-username';
       
     
       <div *ngIf="showUsername">
-      </div>
       <app-table-username [filterUsername]="username_value"></app-table-username>
       </div>
             `,
