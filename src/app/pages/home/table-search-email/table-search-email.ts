@@ -33,12 +33,12 @@ export class TableEmail implements OnChanges {
   }
 
   applyFilter() {
-    if (this.filterEmail) {
+    if (this.filterEmail.trim()) {
       this.filteredUsers = this.Users.filter(user =>
         user.email?.toLowerCase() === this.filterEmail.toLowerCase()
       );
     } else {
-      this.filteredUsers = this.Users;
+      this.filteredUsers = [];
     }
   }
   
