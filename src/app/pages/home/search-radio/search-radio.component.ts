@@ -14,15 +14,22 @@ import { ButtonModule } from 'primeng/button';
 })
 
 export class SearchRadioComponent {
-    email_value !: string;
-    username_value!: string;
-    search_all_active!: boolean;
+  email_value!: string;
+  username_value!: string;
 
-    @Output() searchAllActiveChange = new EventEmitter<boolean>();
+  @Output() searchAll = new EventEmitter<void>();
+  @Output() searchByEmail = new EventEmitter<string>();
+  @Output() searchByUsername = new EventEmitter<string>();
 
+  click_search_all() {
+      this.searchAll.emit();
+  }
 
-    click_search_all(){
-      this.search_all_active = true;
-      this.searchAllActiveChange.emit(this.search_all_active);
-    }
+  click_search_email() {
+      this.searchByEmail.emit(this.email_value);
+  }
+
+  click_search_username() {
+      this.searchByUsername.emit(this.username_value);
+  }
 }
