@@ -15,7 +15,7 @@ import { ButtonModule } from 'primeng/button';
 
 export class SearchRadioComponent {
   email_value: string = '';  
-  username_value!: string;
+  username_value: string = ''
 
   @Output() searchAll = new EventEmitter<void>();
   @Output() searchByEmail = new EventEmitter<string>();
@@ -29,15 +29,22 @@ export class SearchRadioComponent {
     console.log("Email Value:", this.email_value);
 
    if (!this.email_value || this.email_value.trim() === '') {
-      alert("กรุณากรอกอีเมลก่อนค้นหา!");
+      alert("fill email!");
       return;
     }
-    
+
     this.searchByEmail.emit(this.email_value);
 }
 
 
   click_search_username() {
+    console.log("Username Value:", this.username_value);
+
+    if (!this.username_value || this.username_value.trim() === '') {
+       alert("fill username!");
+       return;
+     }
+
       this.searchByUsername.emit(this.username_value);
   }
 }

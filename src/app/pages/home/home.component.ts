@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { SearchRadioComponent } from "./search-radio/search-radio.component";
 import { TableAll } from './table-search-all/table-search-all.component';
 import { TableEmail } from './table-search-email/table-search-email';
+import { TableUsername } from './table-search-username/table-search-username';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule,CommonModule,RadioButtonModule,TableEmail,TableAll,SearchRadioComponent],
+  imports: [FormsModule,CommonModule,RadioButtonModule,TableEmail,TableAll,TableUsername,SearchRadioComponent],
   template: `
           <div>
       <app-search-radio 
@@ -30,9 +31,9 @@ import { TableEmail } from './table-search-email/table-search-email';
       
     
       <div *ngIf="showUsername">
-     
       </div>
-          </div>
+      <app-table-username [filterUsername]="username_value"></app-table-username>
+      </div>
             `,
   styleUrl: './home.component.css'
 })
